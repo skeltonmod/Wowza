@@ -4,7 +4,7 @@
             <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse"
                 data-target="#mainNavbarCollapse">&#9776;</button>
             <a class="navbar-brand" href="{{ route('dashboard') }}">
-                <img class="img-rounded" src="{{ asset('images/gg.jpg') }}" alt="" width="20%">
+                <img class="img-rounded" src="{{ secure_asset('images/gg.jpg') }}" alt="" width="20%">
             </a>
             <div class="collapse navbar-toggleable-md float-lg-right" id="mainNavbarCollapse">
                 <ul class="nav navbar-nav">
@@ -29,6 +29,9 @@
                         @if (auth()->user()->hasRole('cashier'))
                             <li class="nav-item">
                                 <a href="{{ route('records') }}" class="nav-link active">Records</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('menu') }}" class="nav-link active">Menu</a>
                             </li>
                         @elseif (auth()->user()->hasRole('user'))
                             <li class="nav-item">

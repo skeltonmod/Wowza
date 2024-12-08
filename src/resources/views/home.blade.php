@@ -11,15 +11,15 @@
     <meta name="author" content="">
     <link rel="icon" href="#">
     <title>Reinz Grill & Restobar</title>
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/animsition.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/animsition.min.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/animate.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/style.css') }}" rel="stylesheet">
 
     <style>
         .header {
-            background-image: url('{{ asset('images/img/rienz.jpg') }}');
+            background-image: url('{{ secure_asset('images/img/rienz.jpg') }}');
         }
 
         .ultra {

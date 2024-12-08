@@ -71,7 +71,7 @@
                                 @error('image')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
-                                <img src="{{ asset('images/' . $dish->image) }}" alt="{{ $dish->name }}" style="max-height: 200px; margin-top: 10px;">
+                                <img src="{{ secure_asset('images/' . $dish->image) }}" alt="{{ $dish->name }}" style="max-height: 200px; margin-top: 10px;">
                             </div>
                         </div>
                     </div>

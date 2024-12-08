@@ -10,7 +10,7 @@
                                 <div class="food-item">
                                     <div class="rest-logo">
                                         <a href="#"><img style="height: 240px; width: 100%;"
-                                                src="{{ asset('images/' . $item->image) }}" alt="Food logo"></a>
+                                                src="{{ secure_asset('images/' . $item->image) }}" alt="Food logo"></a>
                                     </div>
                                     <div>
                                         <h6><a href="#">{{ $item['name'] }}</a></h6>

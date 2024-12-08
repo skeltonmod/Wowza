@@ -3,18 +3,18 @@
         <div class="col-lg-12">
             <div class="card card-outline-primary">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">All Employees</h4>
+                    <h4 class="m-b-0 text-white">All {{$title}}</h4>
                 </div>
 
                 <div class="table-responsive m-t-40">
                     <table id="myTable" class="table table-bordered table-striped table-hover">
                         <thead class="thead-dark">
                             <tr>
-                                <th>Category</th>
-                                <th>Dish</th>
-                                <th>Description</th>
-                                <th>Price</th>
-                                <th>Stocks</th>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>Email</th>
+                                <th>Number</th>
+                                <th>Address</th>
                                 <th>Action</th>
                             </tr>
                         </thead>

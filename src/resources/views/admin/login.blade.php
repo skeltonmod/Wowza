@@ -3,7 +3,7 @@
 </div>
 
 <div class="form">
-    <div class="thumbnail"><img src="{{ asset('images/admin/manager.png') }}" /></div>
+    <div class="thumbnail"><img src="{{ secure_asset('images/admin/manager.png') }}" /></div>
 
     @if ($errors->any())
         <span style="color:red;">

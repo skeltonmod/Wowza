@@ -18,14 +18,16 @@ class UserController extends Controller
         $users = User::query()->with("roles")->whereHas("roles", function($q) {
             $q->whereIn("name", ["user"]);
         })->where("id", "!=", Auth::id())->get();
-        return view("admin", compact("users"));
+        $title = "Customers";
+        return view("admin", compact("users", "title"));
     }
 
     public function all_cashier(){
         $users = User::query()->with("roles")->whereHas("roles", function($q) {
             $q->whereIn("name", ["cashier"]);
         })->where("id", "!=", Auth::id())->get();
-        return view("admin", compact("users"));
+        $title = "Cashiers";
+        return view("admin", compact("users", "title"));
     }
 
     public function add(Request $request)

@@ -3,7 +3,7 @@
         <div class="col-lg-12">
             <div class="card card-outline-primary">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">All Employees</h4>
+                    <h4 class="m-b-0 text-white">All Dishes</h4>
                 </div>
 
                 <div class="table-responsive m-t-40">
@@ -31,7 +31,7 @@
                                     <td>{{ $dish->stock }}</td>
                                     {{-- Render an image from the public folder --}}
                                     <td>
-                                        <img src="{{ asset('images/' . $dish->image) }}" alt="{{ $dish->name }}"
+                                        <img src="{{ secure_asset('images/' . $dish->image) }}" alt="{{ $dish->name }}"
                                             class="img-thumbnail" style="width: 100px;">
                                     </td>
                                     <td>
