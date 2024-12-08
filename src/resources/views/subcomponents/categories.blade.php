@@ -7,7 +7,7 @@
             @foreach ($categories as $category)
                 <div class="col-xs-12 col-sm-6 col-md-4 food-item">
                     <div class="food-item-wrap">
-                        <img class="figure-wrap bg-image" style="width: 100%" src="{{ secure_asset('images/' . $category->image) }}" />
+                        <img class="figure-wrap bg-image" style="width: 100%" src="{{ asset('images/' . $category->image) }}" />
                         <div class="content">
                             <center>
                                 <h5><a href="{{ route('dish.category') }}?category_id={{$category->id}}">{{ $category->name }}</a></h5>

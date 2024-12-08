@@ -11,10 +11,10 @@
     <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 
-    <link rel="stylesheet" href="{{ secure_asset('css/admin/login.css') }}">
-    <link href="{{ secure_asset('css/admin/lib/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ secure_asset('css/admin/helper.css') }}" rel="stylesheet">
-    <link href="{{ secure_asset('css/admin/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/admin/login.css') }}">
+    <link href="{{ asset('css/admin/lib/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin/helper.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin/style.css') }}" rel="stylesheet">
 </head>
 
 <body class="fix-header">
@@ -55,15 +55,15 @@
 
 
 
-    <script src="{{ secure_asset('js/admin/lib/jquery/jquery.min.js') }}"></script>
-    <script src="{{ secure_asset('js/admin/lib/bootstrap/js/admin/popper.min.js') }}"></script>
-    <script src="{{ secure_asset('js/admin/lib/bootstrap/js/admin/bootstrap.min.js') }}"></script>
-    <script src="{{ secure_asset('js/admin/jquery.slimscroll.js') }}"></script>
-    <script src="{{ secure_asset('js/admin/sidebarmenu.js') }}"></script>
-    <script src="{{ secure_asset('js/admin/lib/sticky-kit-master/dist/sticky-kit.min.js') }}"></script>
-    <script src="{{ secure_asset('js/admin/custom.min.js') }}"></script>
+    <script src="{{ asset('js/admin/lib/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/admin/lib/bootstrap/js/admin/popper.min.js') }}"></script>
+    <script src="{{ asset('js/admin/lib/bootstrap/js/admin/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/admin/jquery.slimscroll.js') }}"></script>
+    <script src="{{ asset('js/admin/sidebarmenu.js') }}"></script>
+    <script src="{{ asset('js/admin/lib/sticky-kit-master/dist/sticky-kit.min.js') }}"></script>
+    <script src="{{ asset('js/admin/custom.min.js') }}"></script>
 
-    <script src="{{ secure_asset('js/admin/index.js') }}"></script>
+    <script src="{{ asset('js/admin/index.js') }}"></script>
 
 </body>
 

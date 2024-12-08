@@ -4,7 +4,7 @@
             <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse"
                 data-target="#mainNavbarCollapse">&#9776;</button>
             <a class="navbar-brand" href="{{ route('dashboard') }}">
-                <img class="img-rounded" src="{{ secure_asset('images/gg.jpg') }}" alt="" width="20%">
+                <img class="img-rounded" src="{{ asset('images/gg.jpg') }}" alt="" width="20%">
             </a>
             <div class="collapse navbar-toggleable-md float-lg-right" id="mainNavbarCollapse">
                 <ul class="nav navbar-nav">

@@ -31,7 +31,7 @@
                                     <td>{{ $dish->stock }}</td>
                                     {{-- Render an image from the public folder --}}
                                     <td>
-                                        <img src="{{ secure_asset('images/' . $dish->image) }}" alt="{{ $dish->name }}"
+                                        <img src="{{ asset('images/' . $dish->image) }}" alt="{{ $dish->name }}"
                                             class="img-thumbnail" style="width: 100px;">
                                     </td>
                                     <td>

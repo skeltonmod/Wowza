@@ -67,7 +67,7 @@
                                 <div class="col-xs-12 col-sm-12 col-lg-8">
                                     <div class="rest-logo pull-left">
                                         <a href="#"><img style="height: 100px; width: 100px;"
-                                                src="{{ secure_asset('images/' . $item->image) }}" alt="Food logo"></a>
+                                                src="{{ asset('images/' . $item->image) }}" alt="Food logo"></a>
                                     </div>
                                     <div class="rest-descr">
                                         <h6><a href="#">{{ $item['name'] }}</a></h6>
