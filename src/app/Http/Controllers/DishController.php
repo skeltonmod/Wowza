@@ -28,6 +28,19 @@ class DishController extends Controller
         return view('admin', compact('dish', 'categories'));
     }
 
+    public function fetch(Request $request)
+    {
+        
+        $categories = DishCategory::all();
+        $category_id = $request->input('category_id');
+        if ($category_id) {
+            $dishes = Dish::where('category_id', $category_id)->get();
+        } else {
+            $dishes = Dish::all();
+        }
+        return view("home", compact("dishes", "categories", "category_id"));
+    }
+
     public function all()
     {
         $dishes = Dish::query()->with('category')->get();

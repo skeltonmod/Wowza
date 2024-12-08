@@ -12,15 +12,21 @@
 
             <ul class="navbar-nav my-lg-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-muted" href="#" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         <img src="{{ asset('images/admin/logout.png') }}" alt="user" class="profile-pic" />
                     </a>
                     <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                         <ul class="dropdown-user">
                             <li>
-                                <a href="{{ route('logout') }}">
-                                    <i class="fa fa-power-off"></i> Logout
+                                <a href="{{ route('logout') }}" class="nav-link active"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Logout
                                 </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="GET"
+                                    style="display: none;">
+                                    @csrf
+                                </form>
                             </li>
                         </ul>
                     </div>

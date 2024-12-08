@@ -15,7 +15,20 @@
                                     <div>
                                         <h6><a href="#">{{ $item['name'] }}</a></h6>
                                         <p>{{ $item['description'] }}</p>
+                                        @auth
+                                        <p>Stocks: <strong>{{ $item['stock'] }}</strong></p>
+                                        @endauth
                                     </div>
+                                    @auth
+                                        @if (auth()->user()->hasRole('user') || auth()->user()->hasRole('cashier'))
+                                            <form method="POST" action="{{ route('cart.add', ['d_id' => $item->id]) }}">
+                                                @csrf
+                                                <input type="number" name="quantity" value="1" class="form-control"
+                                                    size="2">
+                                                <button type="submit" class="btn btn-primary">Add To Cart</button>
+                                            </form>
+                                        @endif
+                                    @endauth
                                 </div>
                             </div>
                         @endforeach

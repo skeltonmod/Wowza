@@ -17,6 +17,10 @@ class CartController extends Controller
         $product = Dish::find($d_id); // Find the product from the database
         $quantity = $request->input('quantity');
 
+        if ($product->stock < $quantity) {
+            return redirect()->back()->with('error', 'Not enough stock for '. $product->name);
+        }
+
         $cart = session()->get('cart', []);
 
         $itemKey = array_search($d_id, array_column($cart, 'd_id'));
@@ -31,9 +35,7 @@ class CartController extends Controller
             ];
         }
 
-        if ($product->stock < $quantity) {
-            return redirect()->back()->with('error', 'Not enough stock for'. $product->name);
-        }
+        
 
         // Update the session
         session(['cart' => $cart]);

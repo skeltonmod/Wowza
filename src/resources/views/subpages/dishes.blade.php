@@ -1,8 +1,6 @@
 <div class="container m-t-10">
-
     <div class="row">
         <!-- Cart Widget -->
-
         <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
             <div class="widget widget-cart">
                 <div class="widget-heading">
@@ -24,8 +22,7 @@
                     @foreach (session('cart', []) as $item)
                         <div class="title-row">
                             {{ $item['name'] }}
-                            <a
-                                href="{{ route('cart.remove', ['res_id' => request('res_id'), 'd_id' => $item['d_id']]) }}">
+                            <a href="{{ route('cart.remove', ['res_id' => request('res_id'), 'd_id' => $item['d_id']]) }}">
                                 <i class="fa fa-trash pull-right"></i>
                             </a>
                         </div>
@@ -60,6 +57,19 @@
                     <h3 class="text-dark">MENU</h3>
                 </div>
                 <div class="collapse in">
+                    <form method="GET" action="{{ route('menu') }}">
+                        <div class="form-group">
+                            <label for="category">Select Category:</label>
+                            <select name="category_id" id="category" class="form-control" onchange="this.form.submit()">
+                                <option value="">All Categories</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}" {{ $category_id == $category->id ? 'selected' : '' }}>
+                                        {{ $category->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </form>
 
                     @foreach ($dishes as $item)
                         <div class="food-item">
@@ -78,8 +88,7 @@
                                     <span class="price pull-left">₱{{ number_format($item['price'], 2) }}</span>
                                     <form method="POST" action="{{ route('cart.add', ['d_id' => $item['id']]) }}">
                                         @csrf
-                                        <input type="number" name="quantity" value="1" class="form-control"
-                                            size="2">
+                                        <input type="number" name="quantity" value="1" class="form-control" size="2">
                                         <button type="submit" class="btn btn-primary">Add To Cart</button>
                                     </form>
                                 </div>

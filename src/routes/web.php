@@ -10,6 +10,7 @@ use App\Models\Dish;
 use App\Models\DishCategory;
 use App\Models\Order;
 use App\Models\User;
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -72,11 +73,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-    Route::get("/menu", function () {
-        // Include data from the Dish model
-        $dishes = Dish::all();
-        return view("home", compact("dishes"));
-    })->name("menu");
+    Route::get("/menu", [DishController::class, 'fetch'])->name("menu");
 
     Route::get('e-wallet/pay', [PaymentController::class, 'pay'])->name('ewallet.pay');
 
@@ -131,7 +128,6 @@ Route::group(['middleware' => 'auth'], function () {
         return view("admin");
     })->name("admin.user.add");
 
-    Route::get("/admin/");
 
     Route::get("/admin/employee/{id}", function ($id) {
         $user = User::query()->find($id);
