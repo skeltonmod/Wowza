@@ -39,28 +39,28 @@
                                         <td data-column="Status">
                                             @php $status = $order->status; @endphp
                                             @if (!$status)
-                                                <button type="button" class="btn btn-info">
+                                                <span class="text-info">
                                                     <span class="fa fa-bars" aria-hidden="true"></span> Dispatch
-                                                </button>
+                                                </span>
                                             @elseif($status == 'pending')
-                                                <button type="button" class="btn btn-warning">
+                                                <span class="text-warning">
                                                     <span class="fa fa-cog fa-spin" aria-hidden="true"></span>
                                                     Preparing!
-                                                </button>
+                                                </span>
                                             @elseif($status == 'processing')
-                                                <button type="button" class="btn btn-warning">
-                                                    <span class="fa fa-cog fa-spin" aria-hidden="true"></span>
-                                                    On The Way!
-                                                </button>
+                                                <span class="text-warning">
+                                                    <span class="fa fa-cog fa-spin" aria-hidden="true"></span> On The
+                                                    Way!
+                                                </span>
                                             @elseif($status == 'delivered')
-                                                <button type="button" class="btn btn-success">
+                                                <span class="text-success">
                                                     <span class="fa fa-check-circle" aria-hidden="true"></span>
                                                     Delivered
-                                                </button>
+                                                </span>
                                             @elseif($status == 'rejected')
-                                                <button type="button" class="btn btn-danger">
+                                                <span class="text-danger">
                                                     <i class="fa fa-close"></i> Cancelled
-                                                </button>
+                                                </span>
                                             @endif
                                         </td>
                                         <td data-column="Date">{{ $order->created_at }}</td>
@@ -75,7 +75,7 @@
                                                 class="btn btn-danger btn-flat btn-addon btn-xs m-b-10">
                                                 <i class="fa fa-close" style="font-size:16px"></i> Cancel
                                             </a>
-                                            
+
                                             <a href="{{ route('orders.change', ['order_id' => $order->id, 'status' => 'processing']) }}"
                                                 class="btn btn-warning btn-flat btn-addon btn-xs m-b-10">
                                                 <i class="fa fa-refresh" style="font-size:16px"></i> Processing
